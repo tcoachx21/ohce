@@ -5,15 +5,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.io.Writer;
-import java.time.LocalTime;
 
 public class OhceApplication {
 
 	private Ohce ohce;
 	private Writer outputWriter;
 
-	public OhceApplication(Writer outputWriter, String name, LocalTime localTime) {
-		this.ohce = new Ohce(localTime, name);
+	public OhceApplication(Writer outputWriter, String name) {
+		this.ohce = new Ohce(name);
 		this.outputWriter = outputWriter;
 	}
 
@@ -39,7 +38,7 @@ public class OhceApplication {
 			System.exit(1);
 		}
 
-		OhceApplication app = new OhceApplication(outputWriter, args[0], LocalTime.now());
+		OhceApplication app = new OhceApplication(outputWriter, args[0]);
 
 		try {
 			outputWriter.flush();

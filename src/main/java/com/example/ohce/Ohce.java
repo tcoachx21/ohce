@@ -8,9 +8,10 @@ public class Ohce {
 	private LocalTime time;
 	String lastOutput;
 
-	public Ohce(LocalTime time, String name) {
+	public Ohce(String name) {
+		this.time = LocalTime.now();
 		this.name = name;
-		this.time = time;
+
 		greeting();
 	}
 
@@ -20,12 +21,19 @@ public class Ohce {
 	}
 
 	public void greeting() {
-		if (time.isBefore(LocalTime.of(12, 0))) {
+
+		LocalTime lt12 = LocalTime.of(12, 0);
+		LocalTime lt20 = LocalTime.of(20, 0);
+
+		if (time.isBefore(lt12)) {
 			lastOutput = "¡Buenos días " + name + "!";
-		} else if (time.isBefore(LocalTime.of(20, 0))) {
-			lastOutput = "¡Buenas tardes " + name + "!";
 		} else {
-			lastOutput = "¡Buenas noches " + name + "!";
+
+			if (time.isBefore(lt20)) {
+				lastOutput = "¡Buenas tardes " + name + "!";
+			} else {
+				lastOutput = "¡Buenas noches " + name + "!";
+			}
 		}
 	}
 
