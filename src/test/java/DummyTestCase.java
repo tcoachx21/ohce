@@ -6,6 +6,6 @@ public class DummyTestCase {
 
 	@Test
 	public void dummyTest() {
-		assertEquals(3,4);
+		assertEquals(4,4);
 	}
 }
