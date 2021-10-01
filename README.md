@@ -44,3 +44,5 @@ This repository has 3 branches of code prepared for Training Sessions:
 	implemented with Mokito.
 	
  
+ 
+ Based on exercise published on [kata-log](https://kata-log.rocks/ohce-kata).
